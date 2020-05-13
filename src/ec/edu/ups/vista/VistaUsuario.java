@@ -43,7 +43,7 @@ public class VistaUsuario {
         return new Usuario(cedula, nombre, apellido, correo, contraseña);
     }
     
-    public Usuario eliminarCliente(){
+    public Usuario eliminarUsuario(){
         leer=new Scanner(System.in);
         System.out.println("Ingrese cedula del usuario a eliminar");
         String cedula=leer.next();
