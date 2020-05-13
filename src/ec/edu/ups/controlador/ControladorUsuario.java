@@ -5,8 +5,11 @@
  */
 package ec.edu.ups.controlador;
 
+import ec.edu.ups.idao.ITelefonoDAO;
 import ec.edu.ups.idao.IUsuarioDAO;
+import ec.edu.ups.modelo.Telefono;
 import ec.edu.ups.modelo.Usuario;
+import ec.edu.ups.vista.VistaTelefono;
 import ec.edu.ups.vista.VistaUsuario;
 import java.util.List;
 
@@ -17,17 +20,23 @@ import java.util.List;
 public class ControladorUsuario{
     //objetos vista
     private VistaUsuario vistaUsuario;
+    private VistaTelefono vistaTelefono;
     //objetos modelo
     private Usuario usuario;
+    private Telefono telefono;
     //objetos DAO
     private IUsuarioDAO usuarioDAO;
+    private ITelefonoDAO telefonoDAO;
 
-    public ControladorUsuario(VistaUsuario vistaUsuario, Usuario usuario, IUsuarioDAO uusuarioDAO) {
+    public ControladorUsuario(VistaUsuario vistaUsuario, VistaTelefono vistaTelefono, Usuario usuario, Telefono telefono, IUsuarioDAO usuarioDAO, ITelefonoDAO telefonoDAO) {
         this.vistaUsuario = vistaUsuario;
-        this.usuario = usuario;
-        this.usuarioDAO = uusuarioDAO;
+        this.vistaTelefono = vistaTelefono;
+        
+        this.usuarioDAO = usuarioDAO;
+        this.telefonoDAO = telefonoDAO;
     }
-    
+     
+       
     public void registrar(){
         usuario=vistaUsuario.ingresarUsuario();
         usuarioDAO.create(usuario);
@@ -43,11 +52,17 @@ public class ControladorUsuario{
         usuarioDAO.delete(usuario);
     }
     
-    public void verUsuario(){
+    /*public void verUsuario(){
         List<Usuario> usuarios;
         usuarios=usuarioDAO.findall();
         vistaUsuario.listarUsuarios(usuarios);
-    }
+    }*/
     
+    public void agregarTelefono(){
+        int codigo=vistaTelefono.buscarTelefono();
+        telefono=telefonoDAO.read(codigo);
+        usuario.registrar(telefono);
+        usuarioDAO.update(usuario);
+    }
      
 }
