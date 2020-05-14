@@ -20,10 +20,12 @@ public class ControladorTelefono {
     private Telefono telefono;
     private ITelefonoDAO telefonoDAO;
 
-    public ControladorTelefono(VistaTelefono vistaTelefono, Telefono telefono, ITelefonoDAO telefonoDAO) {
+    public ControladorTelefono(VistaTelefono vistaTelefono, ITelefonoDAO telefonoDAO) {
         this.vistaTelefono = vistaTelefono;
         this.telefonoDAO = telefonoDAO;
     }
+
+    
     
     public void registrar(){
         telefono=vistaTelefono.ingresarTelefono();

@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class VistaUsuario {
     private Scanner leer;
-
+    private Usuario usuario;
     public VistaUsuario() {
         leer=new Scanner(System.in);
     }
@@ -50,11 +50,11 @@ public class VistaUsuario {
         System.out.println("Ingrese cedula del usuario a actualizar");
         String cedula=leer.next();
         System.out.println("Ingrse los nuevos detos: Nombre, Apellido, Correo, Contraseña");
+        System.out.println("Ingrese nuevo nombre");
         String nombre=leer.next();
+        System.out.println("Ingrese nuevo apellido");
         String apellido=leer.next();
-        String correo=leer.next();
-        String contraseña=leer.next();
-        return new Usuario(cedula, nombre, apellido, correo, contraseña);
+        return new Usuario(cedula, nombre, apellido, null, null);
     }
     
     public Usuario eliminarUsuario(){
@@ -63,17 +63,5 @@ public class VistaUsuario {
         String cedula=leer.next();
         return new Usuario(cedula, null, null, null, null);
     }
-    
-    /**public String buscarUsuario(){
-        leer=new Scanner(System.in);
-        System.out.println("Ingrese cedula del usuario a buscar");
-        String cedula=leer.next();
-        return cedula;
-    }
-    
-    public void listarUsuarios(List<Usuario> usuarios){
-        for (Usuario usuario : usuarios) {
-            System.out.println("Datos del usuario: "+usuario);
-        }
-    }*/
+        
 }

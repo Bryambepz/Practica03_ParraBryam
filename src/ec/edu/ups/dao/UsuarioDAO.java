@@ -7,6 +7,7 @@ package ec.edu.ups.dao;
 
 import ec.edu.ups.idao.IUsuarioDAO;
 import ec.edu.ups.modelo.Usuario;
+import ec.edu.ups.vista.VistaUsuario;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -17,16 +18,30 @@ import java.util.List;
  */
 public class UsuarioDAO implements IUsuarioDAO{
     private List<Usuario> listaUsuario;
-
+    private int cont=0;
+    private VistaUsuario vistaUsuario;
     public UsuarioDAO(){
-        listaUsuario=new ArrayList<>();                
+        listaUsuario=new ArrayList<>();
     }
     
     @Override
     public void create(Usuario usuario) {
         listaUsuario.add(usuario);
     }
-
+    
+    @Override
+    public Usuario confirmarU(String correo, String contraseña) {
+        for (Usuario usuario : listaUsuario) {
+            if(usuario.getCorreo()==correo && usuario.getContraseña()==contraseña){
+                System.out.println("correcto");
+                return usuario;
+            }else{
+                System.out.println("incorrecto");
+            }
+        }
+        return null;
+    }
+    
     @Override
     public Usuario read(String cedula) {
         for (Usuario usuario : listaUsuario) {
@@ -64,5 +79,7 @@ public class UsuarioDAO implements IUsuarioDAO{
 //    public List<Usuario> findall() {
 //        return listaUsuario;
 //    }
+
+    
     
 }

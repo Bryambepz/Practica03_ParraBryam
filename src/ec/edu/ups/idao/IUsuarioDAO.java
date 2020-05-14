@@ -14,6 +14,7 @@ import java.util.List;
  */
 public interface IUsuarioDAO {
     public void create(Usuario usuario);
+    public Usuario confirmarU(String correo,String contraseña);
     public Usuario read(String cedula);
     public void update(Usuario usuario);
     public void delete(Usuario usuario);

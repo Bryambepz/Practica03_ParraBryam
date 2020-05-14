@@ -28,7 +28,7 @@ public class ControladorUsuario{
     private IUsuarioDAO usuarioDAO;
     private ITelefonoDAO telefonoDAO;
 
-    public ControladorUsuario(VistaUsuario vistaUsuario, VistaTelefono vistaTelefono, Usuario usuario, Telefono telefono, IUsuarioDAO usuarioDAO, ITelefonoDAO telefonoDAO) {
+    public ControladorUsuario(VistaUsuario vistaUsuario, VistaTelefono vistaTelefono, IUsuarioDAO usuarioDAO, ITelefonoDAO telefonoDAO) {
         this.vistaUsuario = vistaUsuario;
         this.vistaTelefono = vistaTelefono;
         
@@ -51,17 +51,7 @@ public class ControladorUsuario{
         usuario=vistaUsuario.eliminarUsuario();
         usuarioDAO.delete(usuario);
     }
-    
-    public void confirmarU(){
-        usuario=vistaUsuario.confirmarUsuario();
-        usuarioDAO.create(usuario);
-    }
-    /*public void verUsuario(){
-        List<Usuario> usuarios;
-        usuarios=usuarioDAO.findall();
-        vistaUsuario.listarUsuarios(usuarios);
-    }*/
-    
+              
     public void agregarTelefono(){
         int codigo=vistaTelefono.buscarTelefono();
         telefono=telefonoDAO.read(codigo);
