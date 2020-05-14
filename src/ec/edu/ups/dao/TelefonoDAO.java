@@ -1,0 +1,63 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ec.edu.ups.dao;
+
+import ec.edu.ups.idao.ITelefonoDAO;
+import ec.edu.ups.modelo.Telefono;
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ *
+ * @author braya
+ */
+public class TelefonoDAO implements ITelefonoDAO{
+    private List<Telefono> listatelefono;
+    
+    @Override
+    public void create(Telefono telefono) {
+        listatelefono.add(telefono);
+    }
+
+    @Override
+    public Telefono read(int codigo) {
+        for (Telefono telefono : listatelefono) {
+            if(telefono.getCodigo()==codigo){
+                return telefono;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void update(Telefono telefono) {
+         for (int i = 0; i < listatelefono.size(); i++) {
+            Telefono t = listatelefono.get(i);
+            if(t.getCodigo()==telefono.getCodigo()){
+                listatelefono.set(i, telefono);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void delete(Telefono telefono) {
+        Iterator<Telefono> it=listatelefono.iterator();
+        while(it.hasNext()){
+            Telefono t=it.next();
+            if(t.getCodigo()==telefono.getCodigo()){
+                it.remove();
+                break;
+            }
+        }
+    }
+
+    @Override
+    public List<Telefono> findall() {
+        return listatelefono;
+    }
+    
+}

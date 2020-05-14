@@ -29,7 +29,7 @@ public class VistaTelefono {
         String numero = leer.next();
         String tipo = leer.next();
         String operadora = leer.next();
-        return new Telefono(codigo, numero, tipo, operadora);//////
+        return new Telefono(codigo, numero, tipo, operadora);   
     }
 
     public Telefono actualizarTelefono() {
@@ -55,7 +55,10 @@ public class VistaTelefono {
         int codigo=leer.nextInt();
         return codigo;
     }
-
+    
+    public void verTelefono(Telefono telefono){
+        System.out.println("Datos del telefono: "+ telefono);
+    }
     public void listarTelefonos(List<Telefono> telefonos) {
         for (Telefono telefono : telefonos) {
             System.out.println("Datos del telefono: "+ telefono);

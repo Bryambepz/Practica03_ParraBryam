@@ -60,9 +60,9 @@ public class UsuarioDAO implements IUsuarioDAO{
         }
     }
 
-    @Override
-    public List<Usuario> findall() {
-        return listaUsuario;
-    }
+//    @Override
+//    public List<Usuario> findall() {
+//        return listaUsuario;
+//    }
     
 }

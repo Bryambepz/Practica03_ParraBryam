@@ -52,6 +52,10 @@ public class ControladorUsuario{
         usuarioDAO.delete(usuario);
     }
     
+    public void confirmarU(){
+        usuario=vistaUsuario.confirmarUsuario();
+        usuarioDAO.create(usuario);
+    }
     /*public void verUsuario(){
         List<Usuario> usuarios;
         usuarios=usuarioDAO.findall();

@@ -22,15 +22,29 @@ public class VistaUsuario {
     
     public Usuario ingresarUsuario(){
         leer=new Scanner(System.in);
-        System.out.println("Ingrese datos del Usuario");
+        System.out.println("Ingrese datos del Usuario para registrarse");
+        System.out.println("Ingrese cedula");
         String cedula=leer.next();
+        System.out.println("Ingrese nombre");
         String nombre=leer.next();
+        System.out.println("Ingrese apellido");
         String apellido=leer.next();
+        System.out.println("Ingrese correo del usuario");
         String correo=leer.next();
+        System.out.println("ingrese contraseña del usuario");
         String contraseña=leer.next();
         return new Usuario(cedula, nombre, apellido, correo, contraseña);
     }
     
+    public Usuario confirmarUsuario(){
+        leer=new Scanner(System.in);
+        System.out.println("Confirme correo y contraseña");
+        System.out.println("Ingrese correo");
+        String correo=leer.next();
+        System.out.println("Ingrese Contraseña");
+        String contraseña=leer.next();
+        return new Usuario(null, null, null, correo, contraseña);
+    }
     public Usuario actualizarUsuario(){
         
         System.out.println("Ingrese cedula del usuario a actualizar");
@@ -50,7 +64,7 @@ public class VistaUsuario {
         return new Usuario(cedula, null, null, null, null);
     }
     
-    public String buscarUsuario(){
+    /**public String buscarUsuario(){
         leer=new Scanner(System.in);
         System.out.println("Ingrese cedula del usuario a buscar");
         String cedula=leer.next();
@@ -61,5 +75,5 @@ public class VistaUsuario {
         for (Usuario usuario : usuarios) {
             System.out.println("Datos del usuario: "+usuario);
         }
-    }
+    }*/
 }
