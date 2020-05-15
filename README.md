@@ -94,7 +94,6 @@
 ![image](https://user-images.githubusercontent.com/64825176/82029832-27147b00-965d-11ea-92ba-c0eb53f6b4c4.png)
 # Resultado Obtendidos:
 ![image](https://user-images.githubusercontent.com/64825176/82029909-46130d00-965d-11ea-9f83-a7074619e8a8.png)
-##Concluciones:
 ##### CONCLUSIONES:
 •	Se logro entender el concepto de los mapas y sus usos y utilizar el patrón mvc.
 ##### RECOMENDACIONES:
