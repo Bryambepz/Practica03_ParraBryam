@@ -32,6 +32,7 @@ public class Usuario {
         this.apellido = apellido;
         this.correo = correo;
         this.contraseña = contraseña;
+        telefonos=new ArrayList<>();
     }
 
     public String getCedula() {
@@ -143,8 +144,9 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contraseña=" + contraseña + "\nTelefonos: "+telefonos.toString();
+        return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contraseña=" 
+                + contraseña + "\nTelefonos: "+telefonos.toString();
     }
-    
+    //aasas
     
 }
