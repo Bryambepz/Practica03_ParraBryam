@@ -74,6 +74,16 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
+    public List<Telefono> getTelefonos() {
+        return telefonos;
+    }
+
+    public void setTelefonos(List<Telefono> telefonos) {
+        this.telefonos = telefonos;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 3;
