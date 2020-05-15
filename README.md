@@ -18,3 +18,8 @@
 ![image](https://user-images.githubusercontent.com/64825176/82020921-9a16f500-964f-11ea-9866-45c1202fa9a9.png)
 #### 2.3 Creamos las clases: ControladorUsuario y ControladorTelefono
 ![image](https://user-images.githubusercontent.com/64825176/82020987-bf0b6800-964f-11ea-8848-4dbf9290d77a.png)
+#### 2.4 Creamos las clases UsuarioDAO y TelefonoDAO
+![image](https://user-images.githubusercontent.com/64825176/82021472-7f914b80-9650-11ea-8658-73968a59d92b.png)
+#### 2.5 Creamos las interfaces: IUSuarioDAO e ITelefonoDAO
+![image](https://user-images.githubusercontent.com/64825176/82021553-a8b1dc00-9650-11ea-9deb-d5c5e138d628.png)
+### 3. Creamos los atributos de las clases
