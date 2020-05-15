@@ -52,4 +52,6 @@ public class ControladorTelefono {
         telefonos=telefonoDAO.findall();
         vistaTelefono.listarTelefonos(telefonos);
     }
+    
+    
 }

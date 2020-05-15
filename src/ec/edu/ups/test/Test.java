@@ -38,26 +38,20 @@ public class Test {
         //Rgistro de usuario
         ctrlus.registrar();
         //confirmar usuario;
-
-        u = vistau.ingresarUsuario();
+        //u = vistau.ingresarUsuario();
         ctrlus.confirmarU();
-        //System.out.println(u);
+        //ctrlus.verUsuarios();
+
         if (u != null) {
             int op = 0;
-            while (op != 10 && op <= 10) {
-                System.out.println("Menu: " + "\n1)Registrar telefono" + "\n1)Modificar Telefono" + "\n5)Eliminar Telefono"
-                        + "\n6)Buscar telefono" + "\n7)Listar telefonos" + "\n8)Listar los números de teléfono de un usuario" + "\n9)Listar todos los teléfonos (DAOTelefono)"
-                        + "\n10)Salir");
+            while (op != 8 && op <= 8) {
+                System.out.println("Menu: " + "\n1)Registrar telefono" + "\n2)Modificar Telefono" + "\n3)Eliminar Telefono"
+                        + "\n4)Buscar telefono" + "\n5)Listar telefonos" + "\n6)Listar los números de teléfono de un usuario" + "\n7)Listar todos los teléfonos (DAOTelefono)"
+                        + "\n8)Salir");
                 System.out.println("ingrese opcion");
                 op = l.nextInt();
                 switch (op) {
                     case 1:
-
-                        break;
-                    case 2:
-
-                        break;
-                    case 3:
                         //agregar telefono
                         System.out.println("Ingrese numero de telefonos que desea");
                         int ntelf = l.nextInt();
@@ -67,32 +61,34 @@ public class Test {
                             ctrltelf.registrar();
                             ctrltelf.verTelefonos();
                         }
+                        ctrlus.verUsuarios();
                         break;
-                    case 4:
+                    case 2:
                         //modificar telefono
                         ctrltelf.actualizar();
                         ctrltelf.verTelefonos();
                         break;
-                    case 5:
+                    case 3:
                         //eliminar telefono
                         ctrltelf.eliminar();
                         ctrltelf.verTelefonos();
                         break;
-                    case 6:
+                    case 4:
                         //buscar telefono
                         ctrltelf.buscarTelefono();
                         break;
-                    case 7:
+                    case 5:
                         //listar telefonos
                         ctrltelf.verTelefonos();
                         break;
-                    case 8:
+                    case 6:
                         //listar telefonos del usuario(DAOUsuario)
                         System.out.println("lista de telefonos del usuario");
                         //System.out.println(u);
-                        usuarioDAO.read(u.getCedula());
+                        
                         break;
-                    case 9:
+                    case 7:
+
                         break;
                 }
             }

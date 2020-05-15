@@ -64,5 +64,24 @@ public class VistaUsuario {
         String cedula=leer.next();
         return new Usuario(cedula, null, null, null, null);
     }
-        
+    
+    public String buscarUsuario() {
+        leer = new Scanner(System.in);
+        System.out.println("Ingrese cedula del usuario a buscar");
+        String cedula=leer.next();
+        System.out.println("\n--");
+        return cedula;
+    }
+    
+    public void verUsuario(Usuario usuario){
+        System.out.println("Datos del telefono: "+ usuario);
+    }
+    
+    public void listarUsuarios(List<Usuario> usuarios) {
+        for (Usuario usuario : usuarios) {
+            System.out.println("Datos del telefono: "+ usuarios);
+        }
+        System.out.println("--\n");
+    }
+      
 }

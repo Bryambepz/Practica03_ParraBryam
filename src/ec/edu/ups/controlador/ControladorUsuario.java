@@ -55,12 +55,30 @@ public class ControladorUsuario{
         usuario=vistaUsuario.eliminarUsuario();
         usuarioDAO.delete(usuario);
     }
+    
+    public void buscarUsuario(){
+        String cedula=vistaUsuario.buscarUsuario();
+        usuario=usuarioDAO.read(cedula);
+        vistaUsuario.verUsuario(usuario);
+    }
               
     public void agregarTelefono(){
         int codigo=vistaTelefono.buscarTelefono();
         telefono=telefonoDAO.read(codigo);
         usuario.registrar(telefono);
         usuarioDAO.update(usuario);
+    }
+    
+    public void verUsuarios(){
+        List<Usuario> usuarios;
+        usuarios=usuarioDAO.findall();
+        vistaUsuario.listarUsuarios(usuarios);
+    }
+    
+    public void telefonosPorCedula(){
+        String cedula=vistaUsuario.buscarUsuario();
+        usuario=usuarioDAO.read(cedula);
+        List<Telefono> telefonos=usuario.getTelefonos();    
     }
      
 }

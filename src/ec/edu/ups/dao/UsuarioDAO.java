@@ -9,14 +9,17 @@ import ec.edu.ups.idao.IUsuarioDAO;
 import ec.edu.ups.modelo.Usuario;
 import ec.edu.ups.vista.VistaUsuario;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author braya
  */
 public class UsuarioDAO implements IUsuarioDAO{
+    private Map<Integer,Usuario> usuarios=new HashMap<>();
     private List<Usuario> listaUsuario;
     private int cont=0;
     protected String c="correcto";
@@ -48,10 +51,9 @@ public class UsuarioDAO implements IUsuarioDAO{
     
     @Override
     public Usuario read(String cedula) {
-        for (Usuario usuario : listaUsuario) {
-            if(usuario.getCedula()==cedula){
-                return usuario;
-            }
+        Usuario usuario=new Usuario(cedula, null, null, null, null);
+        if(usuarios.containsKey(usuarios.hashCode())){
+            return usuarios.get(usuario.hashCode());
         }
         return null;
     }
@@ -80,10 +82,10 @@ public class UsuarioDAO implements IUsuarioDAO{
         }
     }
 
-//    @Override
-//    public List<Usuario> findall() {
-//        return listaUsuario;
-//    }
+    @Override
+    public List<Usuario> findall() {
+        return listaUsuario;
+    }
 
     
     
