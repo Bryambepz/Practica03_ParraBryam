@@ -19,7 +19,9 @@ import java.util.List;
 public class UsuarioDAO implements IUsuarioDAO{
     private List<Usuario> listaUsuario;
     private int cont=0;
-    private VistaUsuario vistaUsuario;
+    protected String c="correcto";
+    protected String ic="incorrecto";
+
     public UsuarioDAO(){
         listaUsuario=new ArrayList<>();
     }
@@ -32,13 +34,15 @@ public class UsuarioDAO implements IUsuarioDAO{
     @Override
     public Usuario confirmarU(String correo, String contraseña) {
         for (Usuario usuario : listaUsuario) {
-            if(usuario.getCorreo()==correo && usuario.getContraseña()==contraseña){
-                System.out.println("correcto");
+            if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña)){
+                System.out.println(c);
                 return usuario;
             }else{
-                System.out.println("incorrecto");
+                System.out.println(ic);
+                return null;
             }
         }
+        
         return null;
     }
     
@@ -57,6 +61,7 @@ public class UsuarioDAO implements IUsuarioDAO{
         for (int i = 0; i < listaUsuario.size(); i++) {
             Usuario u = listaUsuario.get(i);
             if(u.getCedula()==usuario.getCedula()){
+                System.out.println("listaDAO");
                 listaUsuario.set(i, usuario);
                 break;
             }

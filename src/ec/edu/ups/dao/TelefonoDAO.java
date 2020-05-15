@@ -7,6 +7,7 @@ package ec.edu.ups.dao;
 
 import ec.edu.ups.idao.ITelefonoDAO;
 import ec.edu.ups.modelo.Telefono;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,16 +16,19 @@ import java.util.List;
  * @author braya
  */
 public class TelefonoDAO implements ITelefonoDAO{
-    private List<Telefono> listatelefono;
+    private List<Telefono> listaTelefonos;
     
+    public TelefonoDAO(){
+        listaTelefonos=new ArrayList<>();
+    }
     @Override
     public void create(Telefono telefono) {
-        listatelefono.add(telefono);
+        listaTelefonos.add(telefono);
     }
 
     @Override
     public Telefono read(int codigo) {
-        for (Telefono telefono : listatelefono) {
+        for (Telefono telefono : listaTelefonos) {
             if(telefono.getCodigo()==codigo){
                 return telefono;
             }
@@ -34,10 +38,10 @@ public class TelefonoDAO implements ITelefonoDAO{
 
     @Override
     public void update(Telefono telefono) {
-         for (int i = 0; i < listatelefono.size(); i++) {
-            Telefono t = listatelefono.get(i);
+         for (int i = 0; i < listaTelefonos.size(); i++) {
+            Telefono t = listaTelefonos.get(i);
             if(t.getCodigo()==telefono.getCodigo()){
-                listatelefono.set(i, telefono);
+                listaTelefonos.set(i, telefono);
                 break;
             }
         }
@@ -45,7 +49,7 @@ public class TelefonoDAO implements ITelefonoDAO{
 
     @Override
     public void delete(Telefono telefono) {
-        Iterator<Telefono> it=listatelefono.iterator();
+        Iterator<Telefono> it=listaTelefonos.iterator();
         while(it.hasNext()){
             Telefono t=it.next();
             if(t.getCodigo()==telefono.getCodigo()){
@@ -57,7 +61,7 @@ public class TelefonoDAO implements ITelefonoDAO{
 
     @Override
     public List<Telefono> findall() {
-        return listatelefono;
+        return listaTelefonos;
     }
     
 }

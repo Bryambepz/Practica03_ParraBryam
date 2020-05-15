@@ -5,6 +5,7 @@
  */
 package ec.edu.ups.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,7 +21,9 @@ public class Usuario {
     private String contraseña;
     //lista de agregacion
     private List<Telefono> telefonos;
+    
     public Usuario() {
+        telefonos=new ArrayList<>();
     }
 
     public Usuario(String cedula, String nombre, String apellido, String correo, String contraseña) {
@@ -73,8 +76,9 @@ public class Usuario {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.cedula);
+        int hash = 3;
+        hash = 83 * hash + Objects.hashCode(this.correo);
+        hash = 83 * hash + Objects.hashCode(this.contraseña);
         return hash;
     }
 
@@ -90,14 +94,18 @@ public class Usuario {
             return false;
         }
         final Usuario other = (Usuario) obj;
-        if (!Objects.equals(this.cedula, other.cedula)) {
+        if (!Objects.equals(this.correo, other.correo)) {
+            return false;
+        }
+        if (!Objects.equals(this.contraseña, other.contraseña)) {
             return false;
         }
         return true;
     }
-    
+
+       
     public void registrar(Telefono telefono){
-        telefonos.add(telefono);
+            telefonos.add(telefono);
     }
     
     public void modificar(Telefono telefono){
@@ -125,7 +133,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contraseña=" + contraseña + '}';
+        return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contraseña=" + contraseña + "\nTelefonos: "+telefonos.toString();
     }
     
     

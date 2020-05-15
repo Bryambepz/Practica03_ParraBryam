@@ -42,6 +42,10 @@ public class ControladorUsuario{
         usuarioDAO.create(usuario);
     }
     
+    public void confirmarU(){
+        usuario=vistaUsuario.confirmarUsuario();
+        usuarioDAO.confirmarU(usuario.getCorreo(), usuario.getContraseña());
+    }
     public void actualizar(){
         usuario=vistaUsuario.actualizarUsuario();
         usuarioDAO.update(usuario);

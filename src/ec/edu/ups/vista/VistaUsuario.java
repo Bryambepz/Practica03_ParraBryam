@@ -33,6 +33,7 @@ public class VistaUsuario {
         String correo=leer.next();
         System.out.println("ingrese contraseña del usuario");
         String contraseña=leer.next();
+        System.out.println("--\n");
         return new Usuario(cedula, nombre, apellido, correo, contraseña);
     }
     

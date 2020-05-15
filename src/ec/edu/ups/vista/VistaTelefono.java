@@ -33,7 +33,8 @@ public class VistaTelefono {
         String tipo = leer.next();
         System.out.println("Ingrese operadora");
         String operadora = leer.next();
-        return new Telefono(codigo, numero, tipo, operadora);   
+        System.out.println("\n--");
+        return new Telefono(codigo, numero, tipo, operadora);
     }
 
     public Telefono actualizarTelefono() {
@@ -46,6 +47,7 @@ public class VistaTelefono {
         String tipo = leer.next();
         System.out.println("Ingrese nueva operadora");
         String operadora = leer.next();
+        System.out.println("\n--");
         return new Telefono(codigo, numero, tipo, operadora);
     }
 
@@ -53,6 +55,7 @@ public class VistaTelefono {
         leer = new Scanner(System.in);
         System.out.println("Ingrese codigo del telefono a eliminar");
         int codigo=leer.nextInt();
+        System.out.println("\n--");
         return new Telefono(codigo, null, null, null);
     }
 
@@ -60,6 +63,7 @@ public class VistaTelefono {
         leer = new Scanner(System.in);
         System.out.println("Ingrese codigo del telefono a buscar");
         int codigo=leer.nextInt();
+        System.out.println("\n--");
         return codigo;
     }
     
@@ -70,5 +74,6 @@ public class VistaTelefono {
         for (Telefono telefono : telefonos) {
             System.out.println("Datos del telefono: "+ telefono);
         }
+        System.out.println("--\n");
     }
 }

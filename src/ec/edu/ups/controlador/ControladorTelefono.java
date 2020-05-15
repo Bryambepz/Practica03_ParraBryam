@@ -25,8 +25,6 @@ public class ControladorTelefono {
         this.telefonoDAO = telefonoDAO;
     }
 
-    
-    
     public void registrar(){
         telefono=vistaTelefono.ingresarTelefono();
         telefonoDAO.create(telefono);
@@ -47,6 +45,7 @@ public class ControladorTelefono {
         telefono=telefonoDAO.read(codigo);
         vistaTelefono.verTelefono(telefono);
     }
+    
     
     public void verTelefonos(){
         List<Telefono> telefonos;
