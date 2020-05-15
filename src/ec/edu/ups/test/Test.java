@@ -84,11 +84,13 @@ public class Test {
                     case 6:
                         //listar telefonos del usuario(DAOUsuario)
                         System.out.println("lista de telefonos del usuario");
-                        //System.out.println(u);
+                        ctrltelf.verTelefonos();
                         
                         break;
                     case 7:
-
+                        //listar telefonos del usuario(DAOTelefono)
+                        System.out.println("Lista de telefonoas");
+                        ctrltelf.verTelefonos();
                         break;
                 }
             }
